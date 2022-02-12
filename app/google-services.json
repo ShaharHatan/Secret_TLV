@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "156319937137",
+    "firebase_url": "https://secret-tlv-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "secret-tlv",
+    "storage_bucket": "secret-tlv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156319937137:android:f1e41a02816d45830ca1d0",
+        "android_client_info": {
+          "package_name": "com.shaharH.secretTLV"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156319937137-gg0iqchckv07h2ebedou3ocj3597o6nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBksf-1Yxcbs-VApS55ioRjsLiKBfTQrJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156319937137-gg0iqchckv07h2ebedou3ocj3597o6nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

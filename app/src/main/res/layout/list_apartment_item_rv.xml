@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginRight="15dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cadrViewIMG"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/apAdapter_IMG_apartment"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/apAdapter_BTN_leftIMG"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@id/cadrViewIMG"
+            android:layout_alignTop="@id/cadrViewIMG" />
+
+        <Button
+            android:id="@+id/apAdapter_BTN_rightIMG"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/cadrViewIMG"
+            android:layout_alignEnd="@id/cadrViewIMG" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/apAdapter_TXT_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/cadrViewIMG"
+            android:text=""
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/apAdapter_IMG_favorite"
+            android:layout_width="23dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/heart_empty" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/apAdapter_TXT_address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/apAdapter_TXT_price"
+            android:layout_alignStart="@+id/apAdapter_TXT_price"
+            android:layout_marginTop="8dp"
+            android:maxEms="2"
+            android:minEms="2"
+            android:text=""
+            android:textSize="18sp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apAdapter_TXT_address"
+            android:layout_alignStart="@+id/apAdapter_TXT_price"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="7dp" />
+
+
+        <LinearLayout
+            android:id="@+id/detailsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:layout_toEndOf="@id/cadrViewIMG"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/main_TXT_roomsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Rooms"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/main_TXT_floorTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Floor"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/main_TXT_squareMetreTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="sqm"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detailsNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detailsTitle"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/cadrViewIMG"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/apAdapter_TXT_roomsNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textSize="15sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/apAdapter_TXT_floorNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textSize="15sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/apAdapter_TXT_squareMetreNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
