@@ -23,12 +23,24 @@ public class ImagesManager {
         return imageDisplayedPos;
     }
 
-    private void setImageDisplayedPos(int imageDisplayedPos) {
+    public void setImageDisplayedPos(int imageDisplayedPos) {
         this.imageDisplayedPos = imageDisplayedPos;
     }
 
-    private int getNumOfImages(){
+    public int getNumOfImages() {
         return allImages.size();
+    }
+
+    public boolean isDisplayedLast() {
+        if (imageDisplayedPos == getNumOfImages()-1)
+            return true;
+        return false;
+    }
+
+    public boolean isDisplayedFirst() {
+        if (imageDisplayedPos == 0)
+            return true;
+        return false;
     }
 
 }

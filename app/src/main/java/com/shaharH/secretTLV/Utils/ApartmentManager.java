@@ -281,11 +281,9 @@ public static final int FLOOR_NOT_PROVIDED=-100 , STREET_NUM_NOT_PROVIDED=0, SQU
 
       ArrayList<String> pic11 = new ArrayList<>();
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_2_KPi5X4ezSX_20220124.png");
-      pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_2_KPi5X4ezSX_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_4_9FJ0WhJS4D_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_5_sSlvH0JDW8_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_6_of9N6zgJnW_20220124.png");
-      pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_8_VS1t6xrqbA_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_9_hJ5fTV1Slt_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_8_VS1t6xrqbA_20220124.png");
       pic11.add("https://img.yad2.co.il/Pic/202201/24/2_6/o/y2_7_STBPgxijM6_20220124.png");

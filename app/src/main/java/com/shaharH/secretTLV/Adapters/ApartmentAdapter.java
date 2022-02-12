@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -55,7 +55,23 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         String floorNum = currApart.getOP_floor() != ApartmentManager.FLOOR_NOT_PROVIDED ? "" + currApart.getOP_floor() : "-";
         String squareMetreNum = currApart.getOP_square_meter() != ApartmentManager.SQUARE_METER_NOT_PROVIDED ? "" + currApart.getOP_square_meter() : "-";
         ImagesManager imagesManager = currApart.getOP_ImagesManager();
-        String urlPic = imagesManager.getAllImages().isEmpty() ? IMAGE_NOT_PROVIDED : imagesManager.getAllImages().get(imagesManager.getImageDisplayedPos());
+        String urlPic = "";
+        if (imagesManager.getAllImages().isEmpty()) {
+            urlPic = IMAGE_NOT_PROVIDED;
+            apartVH.apAdapter_BTN_left.setVisibility(View.INVISIBLE);
+            apartVH.apAdapter_BTN_right.setVisibility(View.INVISIBLE);
+        } else
+            urlPic = imagesManager.getAllImages().get(imagesManager.getImageDisplayedPos());
+
+        if(imagesManager.isDisplayedFirst())
+            apartVH.apAdapter_BTN_left.setVisibility(View.INVISIBLE);
+        else if (imagesManager.isDisplayedLast())
+            apartVH.apAdapter_BTN_right.setVisibility(View.INVISIBLE);
+        else {
+            apartVH.apAdapter_BTN_left.setVisibility(View.VISIBLE);
+            apartVH.apAdapter_BTN_right.setVisibility(View.VISIBLE);
+
+        }
 
         //upload the data to the views:
         apartVH.apAdapter_TXT_price.setText(price);
@@ -86,9 +102,12 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     public interface ApartmentClickedListener {
         public void isFavoriteClicked(Apartment apartment, int position);
+
         public void isCardClicked(Apartment apartment, int position);
-        public void isLeftClicked(Apartment apartment, int position,int imagePos);
-        public void isRightClicked(Apartment apartment, int position,int imagePos);
+
+        public void isLeftClicked(Apartment apartment, int position);
+
+        public void isRightClicked(Apartment apartment, int position);
     }
 
     //inner class
@@ -101,8 +120,8 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private MaterialTextView apAdapter_TXT_floorNum;
         private MaterialTextView apAdapter_TXT_squareMetreNum;
         private AppCompatImageView apAdapter_IMG_favorite;
-        private Button apAdapter_BTN_leftIMG;
-        private Button apAdapter_BTN_rightIMG;
+        private ImageView apAdapter_BTN_left;
+        private ImageView apAdapter_BTN_right;
 
 
         //this constructor has input of itemView
@@ -115,6 +134,23 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
 
         private void initViews() {
+
+            apAdapter_BTN_left.setVisibility(View.INVISIBLE);
+
+            apAdapter_BTN_right.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    apartmentClickedListener.isRightClicked(apartments.get(getAdapterPosition()), getAdapterPosition());
+                }
+            });
+
+            apAdapter_BTN_left.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    apartmentClickedListener.isLeftClicked(apartments.get(getAdapterPosition()), getAdapterPosition());
+                }
+            });
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -130,15 +166,6 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
 
-            apAdapter_BTN_leftIMG.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                   // int imagePos = apartments.get(getAdapterPosition()).getOP_ImagesManager().
-                    //apartmentClickedListener.isRightClicked(apartments.get(getAdapterPosition()), getAdapterPosition(),);
-                }
-            });
 
         }
 
@@ -150,8 +177,8 @@ public class ApartmentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             apAdapter_TXT_floorNum = itemView.findViewById(R.id.apAdapter_TXT_floorNum);
             apAdapter_TXT_squareMetreNum = itemView.findViewById(R.id.apAdapter_TXT_squareMetreNum);
             apAdapter_IMG_favorite = itemView.findViewById(R.id.apAdapter_IMG_favorite);
-            apAdapter_BTN_leftIMG = itemView.findViewById(R.id.apAdapter_BTN_leftIMG);
-            apAdapter_BTN_rightIMG = itemView.findViewById(R.id.apAdapter_BTN_rightIMG);
+            apAdapter_BTN_left = itemView.findViewById(R.id.apAdapter_BTN_left);
+            apAdapter_BTN_right = itemView.findViewById(R.id.apAdapter_BTN_right);
         }
     }
 }

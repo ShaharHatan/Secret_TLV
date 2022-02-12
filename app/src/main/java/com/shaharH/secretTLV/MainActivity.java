@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import com.shaharH.secretTLV.Adapters.ApartmentAdapter;
 import com.shaharH.secretTLV.Models.Apartment;
+import com.shaharH.secretTLV.Models.ImagesManager;
 import com.shaharH.secretTLV.Utils.ApartmentManager;
 
 import java.util.ArrayList;
@@ -48,13 +49,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void isLeftClicked(Apartment apartment, int position, int imagePos) {
+            public void isLeftClicked(Apartment apartment, int position) {
+                ImagesManager imagesManager = apartment.getOP_ImagesManager();
+                int currDisplay = imagesManager.getImageDisplayedPos();
 
+                //currDisplay = max
+                if(imagesManager.isDisplayedFirst())
+                    return;
+                imagesManager.setImageDisplayedPos(--currDisplay);
+                main_RV_apartments.getAdapter().notifyItemChanged(position);
             }
 
             @Override
-            public void isRightClicked(Apartment apartment, int position, int imagePos) {
+            public void isRightClicked(Apartment apartment, int position) {
+                ImagesManager imagesManager = apartment.getOP_ImagesManager();
+                int currDisplay = imagesManager.getImageDisplayedPos();
 
+                //currDisplay = max
+                if(imagesManager.isDisplayedLast())
+                    return;
+                imagesManager.setImageDisplayedPos(++currDisplay);
+                main_RV_apartments.getAdapter().notifyItemChanged(position);
             }
         });
 
