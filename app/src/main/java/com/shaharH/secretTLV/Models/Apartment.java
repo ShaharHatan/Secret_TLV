@@ -1,5 +1,7 @@
 package com.shaharH.secretTLV.Models;
 
+import com.shaharH.secretTLV.Utils.ImagesManager;
+
 public class Apartment {
     public enum APARTMENT_KIND{BUILDING,PENTHOUSE,MINI_PENTHOUSE,GARDEN_APARTMENT
         ,DUPLEX,STUDIO_APARTMENT,PRIVATE_HOUSE,BASEMENT_APARTMENT,VACATION_APARTMENT}

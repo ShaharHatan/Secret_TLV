@@ -1,7 +1,6 @@
 package com.shaharH.secretTLV.Utils;
 
 import com.shaharH.secretTLV.Models.Apartment;
-import com.shaharH.secretTLV.Models.ImagesManager;
 import com.shaharH.secretTLV.Models.Landlord;
 import java.util.ArrayList;
 
@@ -20,7 +19,6 @@ public static final int FLOOR_NOT_PROVIDED=-100 , STREET_NUM_NOT_PROVIDED=0, SQU
       pic1.add("https://mir-s3-cdn-cf.behance.net/project_modules/fs/6317b887571471.5dbc1331b2b2b.jpg");
       pic1.add("https://mir-s3-cdn-cf.behance.net/project_modules/fs/da11ae87571471.5dbc1331b0e03.jpg");
       pic1.add("https://mir-s3-cdn-cf.behance.net/project_modules/fs/a704b187571471.5dbc1331b4646.jpg");
-      pic1.add("https://mir-s3-cdn-cf.behance.net/project_modules/fs/7b0f3e87571471.5dbc1331b1cca.jpg");
 
       apartments.add(new Apartment()
               .setMH_street("Pinkas")

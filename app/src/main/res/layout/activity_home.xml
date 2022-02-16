@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/BTN_Sort"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/button_sort"
+            app:iconSize="30dp"
+            app:cornerRadius="0dp"
+            android:textSize="15sp"
+            android:text="Sort" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/BTN_Filter"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/button_filter"
+            app:iconSize="33dp"
+            app:cornerRadius="0dp"
+            android:textSize="15sp"
+            android:text="Filter" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/BTN_Map"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/button_map"
+            app:iconSize="30dp"
+            app:cornerRadius="0dp"
+            android:textSize="15sp"
+            android:text="Map"
+/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"/>
+
+
+</LinearLayout>

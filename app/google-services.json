@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "156319937137-asl7la0ujncpr6fn4hnrgfv34vp3h60d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shaharH.secretTLV",
+            "certificate_hash": "8ecdf273a8c43acf3f9febd96404ab335a4df361"
+          }
+        },
+        {
           "client_id": "156319937137-gg0iqchckv07h2ebedou3ocj3597o6nh.apps.googleusercontent.com",
           "client_type": 3
         }
