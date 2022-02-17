@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.gson.Gson;
 import com.shaharH.secretTLV.Adapters.RecyclerviewAdapter;
+import com.shaharH.secretTLV.ApartmentDetails;
 import com.shaharH.secretTLV.Utils.ImagesManager;
 import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Utils.ApartmentManager;
@@ -42,11 +47,13 @@ public class ApartmentsActivity extends AppCompatActivity {
             @Override
             public void isCardClicked(Apartment apartment, int position) {
                 //------------------intent---------------------------------
-
-                //notify that the specific view changed
-         //       main_RV_apartments.getAdapter().notifyItemChanged(position);
+                Intent intent = new Intent(ApartmentsActivity.this,ApartmentDetails.class);
+                Bundle bundle = new Bundle();
+                String json = new Gson().toJson(apartment);
+                bundle.putString("currentApartment", json);
+                intent.putExtra("currentApartment", bundle);
+                startActivity(intent);
             }
-
         });
 
         main_RV_apartments.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));

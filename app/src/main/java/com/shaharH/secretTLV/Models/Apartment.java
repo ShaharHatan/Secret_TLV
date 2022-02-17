@@ -1,5 +1,6 @@
 package com.shaharH.secretTLV.Models;
 
+import com.shaharH.secretTLV.Utils.ApartmentManager;
 import com.shaharH.secretTLV.Utils.ImagesManager;
 
 public class Apartment {
@@ -180,5 +181,9 @@ public class Apartment {
     public Apartment setOP_square_meter(int OP_square_meter) {
         this.OP_square_meter = OP_square_meter;
         return this;
+    }
+
+    public String getFullAddress(){
+       return MH_street + " " + (OP_streetNum != ApartmentManager.STREET_NUM_NOT_PROVIDED ? OP_streetNum : "");
     }
 }

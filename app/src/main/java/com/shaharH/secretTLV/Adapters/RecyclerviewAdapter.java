@@ -52,7 +52,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
    //               }
 
         String price = "" + currApart.getMH_price() + "₪";
-        String address = currApart.getMH_street() + " " + (currApart.getOP_streetNum() != ApartmentManager.STREET_NUM_NOT_PROVIDED ? currApart.getOP_streetNum() : "");
+        String address = currApart.getFullAddress();
         DecimalFormat df = new DecimalFormat("#.#");
         String roomNum = df.format(currApart.getMH_numOfRoom());
         String floorNum = currApart.getOP_floor() != ApartmentManager.FLOOR_NOT_PROVIDED ? "" + currApart.getOP_floor() : "-";
@@ -130,12 +130,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         private void findItemViews() {
-            apAdapter_TXT_price = itemView.findViewById(R.id.apAdapter_TXT_price);
-            apAdapter_TXT_address = itemView.findViewById(R.id.apAdapter_TXT_address);
+            apAdapter_TXT_price = itemView.findViewById(R.id.apDetails_TXT_price);
+            apAdapter_TXT_address = itemView.findViewById(R.id.apDetails_TXT_address);
             apAdapter_TXT_roomsNum = itemView.findViewById(R.id.apAdapter_TXT_roomsNum);
             apAdapter_TXT_floorNum = itemView.findViewById(R.id.apAdapter_TXT_floorNum);
             apAdapter_TXT_squareMetreNum = itemView.findViewById(R.id.apAdapter_TXT_squareMetreNum);
-            apAdapter_IMG_favorite = itemView.findViewById(R.id.apAdapter_IMG_favorite);
+            apAdapter_IMG_favorite = itemView.findViewById(R.id.apDetails_IMG_favorite);
             // Initializing the ViewPager Object
             mViewPager = itemView.findViewById(R.id.imageViewPager);
 

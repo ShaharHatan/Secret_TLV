@@ -33,7 +33,7 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/apAdapter_TXT_price"
+            android:id="@+id/apDetails_TXT_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/apAdapter_IMG_favorite"
+            android:id="@+id/apDetails_IMG_favorite"
             android:layout_width="23dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
@@ -53,11 +53,11 @@
             android:src="@drawable/heart_empty" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/apAdapter_TXT_address"
+            android:id="@+id/apDetails_TXT_address"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/apAdapter_TXT_price"
-            android:layout_alignStart="@+id/apAdapter_TXT_price"
+            android:layout_below="@id/apDetails_TXT_price"
+            android:layout_alignStart="@+id/apDetails_TXT_price"
             android:layout_marginTop="8dp"
             android:maxEms="2"
             android:minEms="2"
@@ -68,8 +68,8 @@
             android:id="@+id/divider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/apAdapter_TXT_address"
-            android:layout_alignStart="@+id/apAdapter_TXT_price"
+            android:layout_below="@id/apDetails_TXT_address"
+            android:layout_alignStart="@+id/apDetails_TXT_price"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="7dp" />
 
