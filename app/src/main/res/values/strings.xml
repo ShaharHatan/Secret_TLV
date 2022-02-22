@@ -14,4 +14,58 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="apartment_kind">
+        <item></item>
+        <item>Building</item>
+        <item>Penthouse</item>
+        <item>Mini Penthouse</item>
+        <item>Garden Apartment</item>
+        <item>Duplex</item>
+        <item>Studio Apartment</item>
+        <item>Private House</item>
+        <item>Basement Apartment</item>
+        <item>Vacation Apartment</item>
+    </string-array>
+
+
+    <string name="neighborhood_spinner_title">select neighborhood</string>
+    <string-array name="neighborhood">
+        <item></item>
+        <item>Nahalat yitzhak</item>
+        <item>Kfar shalem</item>
+        <item>Yad Eliyahu</item>
+        <item>Shkhunat Hatikva</item>
+        <item>Shapira</item>
+        <item>Florentin</item>
+        <item>Neot Afeka</item>
+        <item>Hakirya</item>
+        <item>Old Jaffa</item>
+        <item>Ajami</item>
+        <item>Lev Hair</item>
+        <item>Bavli</item>
+        <item>Neve Tzedek</item>
+        <item>Hatzafon Hayashan</item>
+        <item>Kerem Hatemanim</item>
+        <item>Revivim</item>
+        <item>Shikun Dan</item>
+        <item>Tzahala</item>
+        <item>Ramat Hahayal</item>
+        <item>Kikar Hamedina</item>
+        <item>Hadar Yosef</item>
+        <item>Tel Aviv University</item>
+        <item>Kokhav Hatzafon</item>
+        <item>Ramat Aviv</item>
+        <item>Ganei Sharona</item>
+        <item>Neve Shaanan</item>
+        <item>Shikun Tzameret</item>
+        <item>Montefiore</item>
+        <item>Ramat Hatayasim</item>
+        <item>Kiryat Meir</item>
+    </string-array>
+
+
 </resources>

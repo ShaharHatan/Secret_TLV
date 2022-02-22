@@ -1,4 +1,4 @@
-package com.shaharH.secretTLV;
+package com.shaharH.secretTLV.Activities;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -12,7 +12,9 @@ import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.shaharH.secretTLV.Models.ApartmentsActivity;
+import com.shaharH.secretTLV.R;
+import com.shaharH.secretTLV.Models.myDB;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +29,14 @@ public class Authentication extends AppCompatActivity {
                 }
             }
     );
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_authentication);
+
+        createSignInIntent();
+    }
 
     public void createSignInIntent() {
         // [START auth_fui_create_intent]
@@ -52,7 +62,8 @@ public class Authentication extends AppCompatActivity {
             // Successfully signed in
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             Log.i("info", "log in successful");
-            Intent intent = new Intent(this, ApartmentsActivity.class);
+            myDB.getInstance();
+            Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             finish();
         } else {
@@ -63,13 +74,5 @@ public class Authentication extends AppCompatActivity {
         }
     }
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentication);
-
-        createSignInIntent();
-    }
 
 }

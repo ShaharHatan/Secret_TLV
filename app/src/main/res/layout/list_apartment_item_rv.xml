@@ -25,7 +25,7 @@
             app:cardElevation="10dp">
 
             <androidx.viewpager.widget.ViewPager
-                android:id="@+id/imageViewPager"
+                android:id="@+id/detailsImage_VP"
                 android:layout_width="200dp"
                 android:layout_height="match_parent" />
 
@@ -33,7 +33,7 @@
 
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/apDetails_TXT_price"
+            android:id="@+id/price_TXT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/apDetails_IMG_favorite"
+            android:id="@+id/favorite_IMG"
             android:layout_width="23dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
@@ -53,11 +53,11 @@
             android:src="@drawable/heart_empty" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/apDetails_TXT_address"
+            android:id="@+id/address_TXT"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/apDetails_TXT_price"
-            android:layout_alignStart="@+id/apDetails_TXT_price"
+            android:layout_below="@id/price_TXT"
+            android:layout_alignStart="@+id/price_TXT"
             android:layout_marginTop="8dp"
             android:maxEms="2"
             android:minEms="2"
@@ -65,25 +65,25 @@
             android:textSize="18sp" />
 
         <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider"
+            android:id="@+id/bigDivider1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/apDetails_TXT_address"
-            android:layout_alignStart="@+id/apDetails_TXT_price"
+            android:layout_below="@id/address_TXT"
+            android:layout_alignStart="@+id/price_TXT"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="7dp" />
 
 
         <LinearLayout
-            android:id="@+id/detailsTitle"
+            android:id="@+id/cardView_LL1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/divider"
+            android:layout_below="@id/bigDivider1"
             android:layout_toEndOf="@id/cadrViewIMG"
             android:orientation="horizontal">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/main_TXT_roomsTitle"
+                android:id="@+id/rooms_title_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:textSize="15sp" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/main_TXT_floorTitle"
+                android:id="@+id/floor_title_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -101,7 +101,7 @@
                 android:textSize="15sp" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/main_TXT_squareMetreTitle"
+                android:id="@+id/squareMetre_title_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -112,16 +112,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/detailsNum"
+            android:id="@+id/cardView_LL2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/detailsTitle"
+            android:layout_below="@+id/cardView_LL1"
             android:layout_marginTop="3dp"
             android:layout_toEndOf="@id/cadrViewIMG"
             android:orientation="horizontal">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/apAdapter_TXT_roomsNum"
+                android:id="@+id/numOfRooms_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -130,7 +130,7 @@
                 android:textSize="15sp" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/apAdapter_TXT_floorNum"
+                android:id="@+id/floorNum_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -139,7 +139,7 @@
                 android:textSize="15sp" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/apAdapter_TXT_squareMetreNum"
+                android:id="@+id/squareMetreNum_TXT"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

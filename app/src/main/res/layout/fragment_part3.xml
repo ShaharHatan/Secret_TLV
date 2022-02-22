@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    tools:context=".Fragments.FragmentPart3">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:text="Upload the apartment images:"/>
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/title"
+        android:textSize="15dp"
+        android:text="please use jpeg format"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/upload_IBN"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/instruction"
+        android:background="@drawable/dashed_square"
+        android:src="@drawable/upload_images"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instruction"
+        android:clickable="false"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:text="Upload image"/>
+
+
+
+</RelativeLayout>

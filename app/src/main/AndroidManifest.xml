@@ -3,6 +3,10 @@
     package="com.shaharH.secretTLV">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Secret_TLV">
         <activity
-            android:name=".ApartmentDetails"
+            android:name=".Activities.AddApartment"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activities.ApartmentDetails"
             android:exported="false" />
         <activity
-            android:name=".Models.ApartmentsActivity"
+            android:name=".Activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Authentication"
+            android:name=".Activities.ApartmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Authentication"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

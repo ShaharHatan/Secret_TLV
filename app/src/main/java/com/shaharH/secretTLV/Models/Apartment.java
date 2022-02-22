@@ -1,9 +1,10 @@
 package com.shaharH.secretTLV.Models;
 
-import com.shaharH.secretTLV.Utils.ApartmentManager;
 import com.shaharH.secretTLV.Utils.ImagesManager;
 
 public class Apartment {
+    public static final int FLOOR_NOT_PROVIDED=-100 , STREET_NUM_NOT_PROVIDED=0,
+            SQUARE_METER_NOT_PROVIDED=0,  NUM_OF_ROOMS_NOT_PROVIDED=0 , PRICE_NOT_PROVIDED=0;
     public enum APARTMENT_KIND{BUILDING,PENTHOUSE,MINI_PENTHOUSE,GARDEN_APARTMENT
         ,DUPLEX,STUDIO_APARTMENT,PRIVATE_HOUSE,BASEMENT_APARTMENT,VACATION_APARTMENT}
     public enum NEIGHBORHOOD{NAHALAT_YITZHAK,KFAR_SHALEM,YAD_ELIYAHU,SHKHUNAT_HATIKVA
@@ -16,61 +17,65 @@ public class Apartment {
 
 
     //apartment details - must have - MH
-    private NEIGHBORHOOD MH_neighborhood;
-    private APARTMENT_KIND MH_apartmentKind;
-    private String MH_street;
-    private int MH_price;
-    private double MH_numOfRoom;
-    private Landlord MH_apartmentLandlord;
+    private NEIGHBORHOOD neighborhood_MH;
+    private APARTMENT_KIND apartmentKind_MH;
+    private String street_MH;
+    private int price_MH;
+    private double numOfRoom_MH;
+    private Landlord apartmentLandlord_MH;
 
     //apartment details - optional - OP
-    private ImagesManager OP_ImagesManager;
-    private int OP_streetNum;
-    private int OP_floor;
-    private int OP_square_meter;
-    private Boolean OP_parking=false;
-    private Boolean OP_elevators=false;
-    private Boolean OP_air_conditioning=false;
-    private Boolean OP_terrace=false;
-    private Boolean OP_storage=false;
+    private ImagesManager imagesManager_OP;
+    private int streetNum_OP;
+    private int floor_OP;
+    private int square_meter_OP;
+    private Boolean parking_OP =false;
+    private Boolean elevators_OP =false;
+    private Boolean air_conditioning_OP =false;
+    private Boolean terrace_OP =false;
+    private Boolean storage_OP =false;
 
 
     public Apartment(){
     };
 
-    public String getMH_street() {
-        return MH_street;
+    public static String getEnumReadableName(Enum neighborhood){
+        return neighborhood.toString().toLowerCase().replace("_", " ");
     }
 
-    public Apartment setMH_street(String MH_street) {
-        this.MH_street = MH_street;
+    public String getStreet_MH() {
+        return street_MH;
+    }
+
+    public Apartment setStreet_MH(String street_MH) {
+        this.street_MH = street_MH;
         return this;
     }
 
-    public NEIGHBORHOOD getMH_neighborhood() {
-        return MH_neighborhood;
+    public NEIGHBORHOOD getNeighborhood_MH() {
+        return neighborhood_MH;
     }
 
-    public Apartment setMH_neighborhood(NEIGHBORHOOD MH_neighborhood) {
-        this.MH_neighborhood = MH_neighborhood;
+    public Apartment setNeighborhood_MH(NEIGHBORHOOD neighborhood_MH) {
+        this.neighborhood_MH = neighborhood_MH;
         return this;
     }
 
-    public int getOP_streetNum() {
-        return OP_streetNum;
+    public int getStreetNum_OP() {
+        return streetNum_OP;
     }
 
-    public Apartment setOP_streetNum(int OP_streetNum) {
-        this.OP_streetNum = OP_streetNum;
+    public Apartment setStreetNum_OP(int streetNum_OP) {
+        this.streetNum_OP = streetNum_OP;
         return this;
     }
 
-    public int getOP_floor() {
-        return OP_floor;
+    public int getFloor_OP() {
+        return floor_OP;
     }
 
-    public Apartment setOP_floor(int OP_floor) {
-        this.OP_floor = OP_floor;
+    public Apartment setFloor_OP(int floor_OP) {
+        this.floor_OP = floor_OP;
         return this;
     }
 
@@ -83,107 +88,107 @@ public class Apartment {
         return this;
     }
 
-    public int getMH_price() {
-        return MH_price;
+    public int getPrice_MH() {
+        return price_MH;
     }
 
-    public Apartment setMH_price(int MH_price) {
-        this.MH_price = MH_price;
+    public Apartment setPrice_MH(int price_MH) {
+        this.price_MH = price_MH;
         return this;
     }
 
-    public double getMH_numOfRoom() {
-        return MH_numOfRoom;
+    public double getNumOfRoom_MH() {
+        return numOfRoom_MH;
     }
 
-    public Apartment setMH_numOfRoom(double MH_numOfRoom) {
-        this.MH_numOfRoom = MH_numOfRoom;
+    public Apartment setNumOfRoom_MH(double numOfRoom_MH) {
+        this.numOfRoom_MH = numOfRoom_MH;
         return this;
     }
 
-       public Landlord getMH_apartmentLandlord() {
-        return MH_apartmentLandlord;
+       public Landlord getApartmentLandlord_MH() {
+        return apartmentLandlord_MH;
     }
 
-    public Apartment setMH_apartmentLandlord(Landlord MH_apartmentLandlord) {
-        this.MH_apartmentLandlord = MH_apartmentLandlord;
+    public Apartment setApartmentLandlord_MH(Landlord apartmentLandlord_MH) {
+        this.apartmentLandlord_MH = apartmentLandlord_MH;
         return this;
     }
 
-    public ImagesManager getOP_ImagesManager() {
-        return OP_ImagesManager;
+    public ImagesManager getImagesManager_OP() {
+        return imagesManager_OP;
     }
 
-    public Apartment setOP_ImagesManager(ImagesManager OP_ImagesManager) {
-        this.OP_ImagesManager = OP_ImagesManager;
+    public Apartment setImagesManager_OP(ImagesManager imagesManager_OP) {
+        this.imagesManager_OP = imagesManager_OP;
         return this;
     }
 
-    public APARTMENT_KIND getMH_apartmentKind() {
-        return MH_apartmentKind;
+    public APARTMENT_KIND getApartmentKind_MH() {
+        return apartmentKind_MH;
     }
 
-    public Apartment setMH_apartmentKind(APARTMENT_KIND MH_apartmentKind) {
-        this.MH_apartmentKind = MH_apartmentKind;
+    public Apartment setApartmentKind_MH(APARTMENT_KIND apartmentKind_MH) {
+        this.apartmentKind_MH = apartmentKind_MH;
         return this;
     }
 
 
-    public Boolean getOP_parking() {
-        return OP_parking;
+    public Boolean getParking_OP() {
+        return parking_OP;
     }
 
-    public Apartment setOP_parking(Boolean OP_parking) {
-        this.OP_parking = OP_parking;
+    public Apartment setParking_OP(Boolean parking_OP) {
+        this.parking_OP = parking_OP;
         return this;
     }
 
-    public Boolean getOP_elevators() {
-        return OP_elevators;
+    public Boolean getElevators_OP() {
+        return elevators_OP;
     }
 
-    public Apartment setOP_elevators(Boolean OP_elevators) {
-        this.OP_elevators = OP_elevators;
+    public Apartment setElevators_OP(Boolean elevators_OP) {
+        this.elevators_OP = elevators_OP;
         return this;
     }
 
-    public Boolean getOP_air_conditioning() {
-        return OP_air_conditioning;
+    public Boolean getAir_conditioning_OP() {
+        return air_conditioning_OP;
     }
 
-    public Apartment setOP_air_conditioning(Boolean OP_air_conditioning) {
-        this.OP_air_conditioning = OP_air_conditioning;
+    public Apartment setAir_conditioning_OP(Boolean air_conditioning_OP) {
+        this.air_conditioning_OP = air_conditioning_OP;
         return this;
     }
 
-    public Boolean getOP_terrace() {
-        return OP_terrace;
+    public Boolean getTerrace_OP() {
+        return terrace_OP;
     }
 
-    public Apartment setOP_terrace(Boolean OP_terrace) {
-        this.OP_terrace = OP_terrace;
+    public Apartment setTerrace_OP(Boolean terrace_OP) {
+        this.terrace_OP = terrace_OP;
         return this;
     }
 
-    public Boolean getOP_storage() {
-        return OP_storage;
+    public Boolean getStorage_OP() {
+        return storage_OP;
     }
 
-    public Apartment setOP_storage(Boolean OP_storage) {
-        this.OP_storage = OP_storage;
+    public Apartment setStorage_OP(Boolean storage_OP) {
+        this.storage_OP = storage_OP;
         return this;
     }
 
-    public int getOP_square_meter() {
-        return OP_square_meter;
+    public int getSquare_meter_OP() {
+        return square_meter_OP;
     }
 
-    public Apartment setOP_square_meter(int OP_square_meter) {
-        this.OP_square_meter = OP_square_meter;
+    public Apartment setSquare_meter_OP(int square_meter_OP) {
+        this.square_meter_OP = square_meter_OP;
         return this;
     }
 
     public String getFullAddress(){
-       return MH_street + " " + (OP_streetNum != ApartmentManager.STREET_NUM_NOT_PROVIDED ? OP_streetNum : "");
+       return street_MH + " " + (streetNum_OP != Apartment.STREET_NUM_NOT_PROVIDED ? streetNum_OP : "");
     }
 }

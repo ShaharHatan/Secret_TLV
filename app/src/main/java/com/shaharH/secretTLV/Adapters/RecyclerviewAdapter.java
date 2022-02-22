@@ -4,14 +4,16 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.textview.MaterialTextView;
 import com.shaharH.secretTLV.Models.Apartment;
 import com.shaharH.secretTLV.R;
-import com.shaharH.secretTLV.Utils.ApartmentManager;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -39,24 +41,22 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         //we do casting to the view holder(we make holder a specific one that handle in movies)
         ApartmentViewHolder apartVH = (ApartmentViewHolder) holder;
         Apartment currApart = apartments.get(position);
-        // apartVH - the current view
-        //currApart - the current DATA
 
-            // Initializing the ViewPagerAdapter
-            ArrayList<String> images = currApart.getOP_ImagesManager().getAllImages();
+        // Initializing the ViewPagerAdapter
+        ArrayList<String> images = currApart.getImagesManager_OP().getAllImages();
 
-                apartVH.mViewPagerAdapter = new ViewPagerAdapter(activity, images);
+        apartVH.mViewPagerAdapter = new ViewPagerAdapter(activity, images);
 
-                // Adding the Adapter to the ViewPager
-                apartVH.mViewPager.setAdapter(apartVH.mViewPagerAdapter);
-   //               }
+        // Adding the Adapter to the ViewPager
+        apartVH.mViewPager.setAdapter(apartVH.mViewPagerAdapter);
 
-        String price = "" + currApart.getMH_price() + "₪";
+
+        String price = currApart.getPrice_MH() + " ₪";
         String address = currApart.getFullAddress();
         DecimalFormat df = new DecimalFormat("#.#");
-        String roomNum = df.format(currApart.getMH_numOfRoom());
-        String floorNum = currApart.getOP_floor() != ApartmentManager.FLOOR_NOT_PROVIDED ? "" + currApart.getOP_floor() : "-";
-        String squareMetreNum = currApart.getOP_square_meter() != ApartmentManager.SQUARE_METER_NOT_PROVIDED ? "" + currApart.getOP_square_meter() : "-";
+        String roomNum = df.format(currApart.getNumOfRoom_MH());
+        String floorNum = currApart.getFloor_OP() != Apartment.FLOOR_NOT_PROVIDED ? "" + currApart.getFloor_OP() : "-";
+        String squareMetreNum = currApart.getSquare_meter_OP() != Apartment.SQUARE_METER_NOT_PROVIDED ? "" + currApart.getSquare_meter_OP() : "-";
 
 
         //upload the data to the views:
@@ -92,11 +92,8 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public class ApartmentViewHolder extends RecyclerView.ViewHolder {
 
         private AppCompatImageView apAdapter_IMG_apartment;
-        private MaterialTextView apAdapter_TXT_price;
-        private MaterialTextView apAdapter_TXT_address;
-        private MaterialTextView apAdapter_TXT_roomsNum;
-        private MaterialTextView apAdapter_TXT_floorNum;
-        private MaterialTextView apAdapter_TXT_squareMetreNum;
+        private MaterialTextView apAdapter_TXT_price , apAdapter_TXT_address ,
+                apAdapter_TXT_roomsNum , apAdapter_TXT_floorNum , apAdapter_TXT_squareMetreNum;
         private AppCompatImageView apAdapter_IMG_favorite;
         private ViewPager mViewPager;
         private ViewPagerAdapter mViewPagerAdapter;
@@ -107,6 +104,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         //in the constructor we connect between the views and the items
         public ApartmentViewHolder(@NonNull View itemView) {
             super(itemView);
+
             findItemViews();
             initViews();
         }
@@ -130,14 +128,14 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
 
         private void findItemViews() {
-            apAdapter_TXT_price = itemView.findViewById(R.id.apDetails_TXT_price);
-            apAdapter_TXT_address = itemView.findViewById(R.id.apDetails_TXT_address);
-            apAdapter_TXT_roomsNum = itemView.findViewById(R.id.apAdapter_TXT_roomsNum);
-            apAdapter_TXT_floorNum = itemView.findViewById(R.id.apAdapter_TXT_floorNum);
-            apAdapter_TXT_squareMetreNum = itemView.findViewById(R.id.apAdapter_TXT_squareMetreNum);
-            apAdapter_IMG_favorite = itemView.findViewById(R.id.apDetails_IMG_favorite);
+            apAdapter_TXT_price = itemView.findViewById(R.id.price_TXT);
+            apAdapter_TXT_address = itemView.findViewById(R.id.address_TXT);
+            apAdapter_TXT_roomsNum = itemView.findViewById(R.id.numOfRooms_TXT);
+            apAdapter_TXT_floorNum = itemView.findViewById(R.id.floorNum_TXT);
+            apAdapter_TXT_squareMetreNum = itemView.findViewById(R.id.squareMetreNum_TXT);
+            apAdapter_IMG_favorite = itemView.findViewById(R.id.favorite_IMG);
             // Initializing the ViewPager Object
-            mViewPager = itemView.findViewById(R.id.imageViewPager);
+            mViewPager = itemView.findViewById(R.id.detailsImage_VP);
 
         }
     }

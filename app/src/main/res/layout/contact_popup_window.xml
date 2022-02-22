@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/black"
+    app:cardCornerRadius="30dp"
+    app:contentPadding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="30dp"
+        app:contentPadding="5dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/closePopUp_BTN"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/purple_500"
+        app:icon="@drawable/close"
+        app:iconSize="12dp"
+        app:iconGravity="top"
+        app:iconTint="@color/white" />
+
+    <TextView
+        android:id="@+id/landlordName_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/landlordNum_BTN"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/landlordNum_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_alignStart="@id/landlordWhatsapp_BTN"
+            android:layout_below="@id/landlordName_TXT"
+            android:layout_marginTop="20dp"
+            app:icon="@drawable/fui_ic_phone_white_24dp"
+            android:text="call"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/landlordWhatsapp_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/landlordNum_BTN"
+            android:layout_marginTop="15dp"
+            app:icon="@drawable/whatsapp"
+            android:text="Whatsapp"/>
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
