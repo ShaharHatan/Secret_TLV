@@ -29,7 +29,6 @@ public class myDB {
         return singletonDB;
     }
 
-
     public void addApartment(Apartment apartment) {
         apartments_reference.child("random id").setValue(apartment);
     }

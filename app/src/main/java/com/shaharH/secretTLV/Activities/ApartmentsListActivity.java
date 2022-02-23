@@ -15,14 +15,14 @@ import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Utils.ApartmentManager;
 
 
-public class ApartmentsActivity extends AppCompatActivity {
+public class ApartmentsListActivity extends AppCompatActivity {
     private RecyclerView main_RV_apartments;
     private RecyclerviewAdapter recyclerviewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apartments);
+        setContentView(R.layout.activity_apartments_list);
 
         findViews();
         initRV();
@@ -43,7 +43,7 @@ public class ApartmentsActivity extends AppCompatActivity {
             public void isCardClicked(Apartment apartment, int position) {
 
                 //------------------intent---------------------------------
-                Intent intent = new Intent(ApartmentsActivity.this, ApartmentDetails.class);
+                Intent intent = new Intent(ApartmentsListActivity.this, ApartmentDetails.class);
                 Bundle bundle = new Bundle();
                 String json = new Gson().toJson(apartment);
                 bundle.putString("currentApartment", json);

@@ -61,11 +61,11 @@ public class Authentication extends AppCompatActivity {
         if (result.getResultCode() == RESULT_OK) {
             // Successfully signed in
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            Log.i("info", "log in successful");
-            myDB.getInstance();
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-            finish();
+                Log.i("info", "log in successful");
+                myDB.getInstance();
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+                finish();
         } else {
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check

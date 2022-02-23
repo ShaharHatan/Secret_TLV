@@ -124,7 +124,6 @@ public class FragmentPart3 extends Fragment implements FilledInFragment {
         });
     }
 
-
     private void chooseImage() {
         Log.i("info", "Creating Intent for choosing a image");
         Intent intent = new Intent();

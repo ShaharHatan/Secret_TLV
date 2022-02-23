@@ -1,13 +1,11 @@
 package com.shaharH.secretTLV.Models;
 
 public class Landlord {
-    private static int counter = 0;
-    private int accountId = 1100;
+    private String uid;
     private String name;
     private String phoneNumber;
 
     public Landlord(String name, String phoneNumber) {
-        accountId += (++counter);
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -15,8 +13,23 @@ public class Landlord {
     public Landlord(){
     }
 
-    public int getAccountId() {
-        return accountId;
+    public Landlord setUid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    public Landlord setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public Landlord setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public String getUid() {
+        return uid;
     }
 
     public String getName() {
@@ -26,6 +39,4 @@ public class Landlord {
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
-
 }
