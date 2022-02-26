@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- my favorite palette -->
+    #6F002D
+
+
+    <color name="white_dark1">#E9E7E8</color>
+    <color name="gray_light">#D5D5D5</color>
+    <color name="gray">#C5C3C4</color>
+    <color name="light_1">#FEE5E1</color>
+    <color name="cream_1">#CDBAAA</color>
+    <color name="cream_dark_1">#F5E0CC</color>
+    <color name="cream_2">#B2A69F</color>
+    <color name="cream_3">#DFD4C5</color>
+    <color name="cream_light_1">#EDEAE6</color>
+    <color name="cream_dark_2">#BEB6AE</color>
+
+    #BEB6AE
+    <color name="white_dark2">#F7F6F2</color>
+
+    <color name="green_1">#999E8A</color>
+    <color name="blue_dark_1">#1F3E4C</color>
+    <color name="blue_1">#A7B2B4</color>
+    <color name="blue_dark_2">#003049</color>
+
+    <color name="blue_dark_3">#153342</color>
+
+
+
+
+    <color name="bordeaux_100">#DEC3D3</color>
+    <color name="bordeaux_200">#DDA0C2</color>
+    <color name="bordeaux_300">#DD80B4</color>
+    <color name="bordeaux_400">#DB61A7</color>
+    <color name="bordeaux_500">#DB4198</color>
+    <color name="bordeaux_600">#DB208B</color>
+    <color name="bordeaux_700">#DA0073</color>
+    <color name="bordeaux_800">#A82058</color>
+    <color name="bordeaux_900">#6F002D</color>
+    <color name="bordeaux_1000">#59001F</color>
+
+
+
     <!-- app color palette -->
     <color name="primary">@color/indigo_500</color>
     <color name="primary_light">@color/indigo_100</color>

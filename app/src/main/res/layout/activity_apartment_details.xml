@@ -28,6 +28,7 @@
             android:text="Contact the landlord"
             app:icon="@drawable/contact"/>
 
+<!--
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/favorite_IMG"
             android:layout_width="30dp"
@@ -36,6 +37,7 @@
             android:layout_alignTop="@id/contact_BTN"
             android:scaleType="centerCrop"
             android:src="@drawable/heart_empty" />
+-->
 
         <LinearLayout
             android:id="@+id/list_LL"
@@ -189,8 +191,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="20dp"
-                android:elevation="10dp"
+                android:elevation="15dp"
                 app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/grey_400"
                 app:cardElevation="10dp">
 
                 <LinearLayout

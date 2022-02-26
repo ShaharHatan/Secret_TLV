@@ -1,11 +1,15 @@
 package com.shaharH.secretTLV.Models;
 
+import java.util.ArrayList;
+
 public class Landlord {
     private String uid;
     private String name;
     private String phoneNumber;
+    private ArrayList<Integer> apartmentsUid = new ArrayList<>();
 
-    public Landlord(String name, String phoneNumber) {
+
+    public Landlord(String name,String phoneNumber){
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -28,6 +32,11 @@ public class Landlord {
         return this;
     }
 
+    public Landlord setApartmentsUid(int apartmentsUid) {
+        this.apartmentsUid.add(apartmentsUid);
+        return this;
+    }
+
     public String getUid() {
         return uid;
     }
@@ -38,5 +47,9 @@ public class Landlord {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public ArrayList<Integer> getApartmentsUid() {
+        return apartmentsUid;
     }
 }

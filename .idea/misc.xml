@@ -9,8 +9,9 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable/custom_ratingbar.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_add_apartment.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartment_details.xml" value="0.15608180839612487" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartment_details.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartments.xml" value="0.1" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartments_list.xml" value="0.159375" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_authentication.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_main.xml" value="0.16354166666666667" />
@@ -25,8 +26,9 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part3.xml" value="0.22" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part4.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/image_view_pager.xml" value="0.16354166666666667" />
-        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/list_apartment_item_rv.xml" value="0.2545454545454545" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/list_apartment_item_rv.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/xml/border_shadow.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/xml/rounded_rect_shape.xml" value="0.10520833333333333" />
         <entry key="..\:/Users/shaha/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.1" />

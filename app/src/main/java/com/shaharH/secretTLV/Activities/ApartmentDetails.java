@@ -1,7 +1,6 @@
 package com.shaharH.secretTLV.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -16,11 +15,12 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
-import com.google.gson.Gson;
 import com.shaharH.secretTLV.Adapters.ViewPagerAdapter;
 import com.shaharH.secretTLV.Models.Apartment;
 import com.shaharH.secretTLV.R;
+import com.shaharH.secretTLV.Models.ApartmentRepository;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ApartmentDetails extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class ApartmentDetails extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private ViewPagerAdapter mViewPagerAdapter;
-    private AppCompatImageView favorite_IMG;
+//    private AppCompatImageView favorite_IMG;
     private Button contact_BTN;
 
     private MaterialTextView price_TXT, address_TXT, numOfRooms_TXT, floorNum_TXT, squareMetreNum_TXT, neighborhood_TXT, apartmentKind_TXT;
@@ -66,35 +66,41 @@ public class ApartmentDetails extends AppCompatActivity {
 
     private void getApartment() {
         Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("currentApartment");
-        String json = bundle.getString("currentApartment");
-        apartment = new Gson().fromJson(json, Apartment.class);
+        Bundle bundle = intent.getBundleExtra("currentApartmentPos");
+        int position = bundle.getInt("pos");
+        apartment = ApartmentRepository.getInstance().getApartments().get(position);
     }
 
+    /*
     private void initFavoriteIcon() {
-        if (apartment.getFavorite())
+        if (apartment.isFavorite())
             favorite_IMG.setImageResource(R.drawable.heart_filled);
         else
             favorite_IMG.setImageResource(R.drawable.heart_empty);
     }
+     */
 
     private void initViews() {
         initSlideView();
-
+/*
         initFavoriteIcon();
         favorite_IMG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean currFavorite = apartment.getFavorite();
+                Boolean currFavorite = apartment.isFavorite();
                 //set local favorite
                 apartment.setFavorite(!currFavorite);
+                FireBaseConnector.getInstance().favoriteClicked(apartment);
                 initFavoriteIcon();
             }
         });
+ */
 
         price_TXT.setText("" + apartment.getPrice_MH() + " ₪");
         address_TXT.setText(apartment.getFullAddress() + " , Tel-Aviv");
-        numOfRooms_TXT.setText("" + apartment.getNumOfRoom_MH());
+        DecimalFormat df = new DecimalFormat("#.#");
+        String roomNum = df.format(apartment.getNumOfRoom_MH());
+        numOfRooms_TXT.setText(roomNum);
         floorNum_TXT.setText(apartment.getFloor_OP() != Apartment.FLOOR_NOT_PROVIDED ? "" + apartment.getFloor_OP() : "-");
         squareMetreNum_TXT.setText(apartment.getSquare_meter_OP() != Apartment.SQUARE_METER_NOT_PROVIDED ? "" + apartment.getSquare_meter_OP() : "-");
         neighborhood_TXT.setText(Apartment.getEnumReadableName(apartment.getNeighborhood_MH()));
@@ -191,7 +197,7 @@ public class ApartmentDetails extends AppCompatActivity {
         numOfRooms_TXT = findViewById(R.id.numOfRooms_TXT);
         floorNum_TXT = findViewById(R.id.floorNum_TXT);
         squareMetreNum_TXT = findViewById(R.id.squareMetreNum_TXT);
-        favorite_IMG = findViewById(R.id.favorite_IMG);
+        //favorite_IMG = findViewById(R.id.favorite_IMG);
         neighborhood_TXT = findViewById(R.id.neighborhood_TXT);
         apartmentKind_TXT = findViewById(R.id.apartmentKind_TXT);
         contact_BTN = findViewById(R.id.contact_BTN);
@@ -203,6 +209,7 @@ public class ApartmentDetails extends AppCompatActivity {
 
 
     }
+
 
     @Override
     public void onBackPressed() {

@@ -147,7 +147,7 @@ public class FragmentPart1 extends Fragment implements FilledInFragment {
         if (isEmpty(numOsRooms_TIL.getEditText()))
             numOfRooms = Apartment.NUM_OF_ROOMS_NOT_PROVIDED;
         else
-            numOfRooms = Float.parseFloat(numOsRooms_TIL.getEditText().getText().toString());
+            numOfRooms = Double.parseDouble(numOsRooms_TIL.getEditText().getText().toString());
     }
 
     private boolean isEmpty(EditText etText) {

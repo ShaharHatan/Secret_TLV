@@ -84,18 +84,18 @@ public class FragmentPart2 extends Fragment implements FilledInFragment {
     }
 
     private void setTerrace() {
-        terrace = storage_CBX.isChecked();
+        terrace = terrace_CBX.isChecked();
     }
 
     private void setAirConditioning() {
-        airConditioning = storage_CBX.isChecked();
+        airConditioning = airConditioning_CBX.isChecked();
     }
 
     private void setElevator() {
-        elevator = storage_CBX.isChecked();
+        elevator = elevator_CBX.isChecked();
     }
 
     private void setParking() {
-        parking = storage_CBX.isChecked();
+        parking = parking_CBX.isChecked();
     }
 }

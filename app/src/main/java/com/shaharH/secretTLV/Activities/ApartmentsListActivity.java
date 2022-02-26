@@ -8,11 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.gson.Gson;
 import com.shaharH.secretTLV.Adapters.RecyclerviewAdapter;
 import com.shaharH.secretTLV.Models.Apartment;
 import com.shaharH.secretTLV.R;
-import com.shaharH.secretTLV.Utils.ApartmentManager;
+import com.shaharH.secretTLV.Models.ApartmentRepository;
 
 
 public class ApartmentsListActivity extends AppCompatActivity {
@@ -25,19 +24,34 @@ public class ApartmentsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apartments_list);
 
         findViews();
+        setCallbackNotifyChange();
         initRV();
     }
 
-        private void initRV() {
-        recyclerviewAdapter = new RecyclerviewAdapter(this, ApartmentManager.generateApartment());
+
+    private void setCallbackNotifyChange() {
+        ApartmentRepository.getInstance().setSynchronousDB(new ApartmentRepository.CallbackNotifyChange() {
+            @Override
+            public void notifyDataChange() {
+                main_RV_apartments.getAdapter().notifyDataSetChanged();
+            }
+        });
+    }
+
+
+
+
+
+    private void initRV() {
+        recyclerviewAdapter = new RecyclerviewAdapter(this, ApartmentRepository.getInstance().getApartments());
         recyclerviewAdapter.setRecyclerviewClickedListener(new RecyclerviewAdapter.RecyclerviewClickedListener() {
+            /*
             @Override
             public void isFavoriteClicked(Apartment apartment, int position) {
                 //save the opposite isFavorite
-                apartment.setFavorite(!apartment.getFavorite());
-                //notify that the specific view changed
-                main_RV_apartments.getAdapter().notifyItemChanged(position);
+                FireBaseConnector.getInstance().favoriteClicked(apartment.setFavorite(!apartment.isFavorite()));
             }
+             */
 
             @Override
             public void isCardClicked(Apartment apartment, int position) {
@@ -45,11 +59,10 @@ public class ApartmentsListActivity extends AppCompatActivity {
                 //------------------intent---------------------------------
                 Intent intent = new Intent(ApartmentsListActivity.this, ApartmentDetails.class);
                 Bundle bundle = new Bundle();
-                String json = new Gson().toJson(apartment);
-                bundle.putString("currentApartment", json);
-                intent.putExtra("currentApartment", bundle);
+                bundle.putInt("pos", position);
+                intent.putExtra("currentApartmentPos", bundle);
                 startActivity(intent);
-                main_RV_apartments.getAdapter().notifyItemChanged(position);
+       //         main_RV_apartments.getAdapter().notifyItemChanged(position);
             }
         });
 

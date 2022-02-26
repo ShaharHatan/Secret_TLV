@@ -13,7 +13,7 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.shaharH.secretTLV.R;
-import com.shaharH.secretTLV.Models.myDB;
+import com.shaharH.secretTLV.Utils.FireBaseConnector;
 
 import java.util.Arrays;
 import java.util.List;
@@ -62,7 +62,7 @@ public class Authentication extends AppCompatActivity {
             // Successfully signed in
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 Log.i("info", "log in successful");
-                myDB.getInstance();
+                FireBaseConnector.getInstance();
                 Intent intent = new Intent(this, HomeActivity.class);
                 startActivity(intent);
                 finish();

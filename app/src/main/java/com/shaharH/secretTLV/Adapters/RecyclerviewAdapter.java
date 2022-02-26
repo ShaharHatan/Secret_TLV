@@ -18,11 +18,11 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<Apartment> apartments = new ArrayList<>();
     private Activity activity;
+    private ArrayList<Apartment> apartments;
     private RecyclerviewClickedListener recyclerviewClickedListener;
 
-    public RecyclerviewAdapter(Activity activity, ArrayList<Apartment> apartments) {
+    public RecyclerviewAdapter(Activity activity,ArrayList<Apartment> apartments) {
         this.activity = activity;
         this.apartments = apartments;
     }
@@ -66,11 +66,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         apartVH.apAdapter_TXT_floorNum.setText(floorNum);
         apartVH.apAdapter_TXT_squareMetreNum.setText(squareMetreNum);
 
-
-        if (currApart.getFavorite())
+/*
+        if (currApart.isFavorite())
             apartVH.apAdapter_IMG_favorite.setImageResource(R.drawable.heart_filled);
         else
             apartVH.apAdapter_IMG_favorite.setImageResource(R.drawable.heart_empty);
+ */
     }
 
     @Override
@@ -83,7 +84,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public interface RecyclerviewClickedListener {
-        public void isFavoriteClicked(Apartment apartment, int position);
+    //    public void isFavoriteClicked(Apartment apartment, int position);
 
         public void isCardClicked(Apartment apartment, int position);
     }
@@ -94,7 +95,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         private AppCompatImageView apAdapter_IMG_apartment;
         private MaterialTextView apAdapter_TXT_price , apAdapter_TXT_address ,
                 apAdapter_TXT_roomsNum , apAdapter_TXT_floorNum , apAdapter_TXT_squareMetreNum;
-        private AppCompatImageView apAdapter_IMG_favorite;
+//        private AppCompatImageView apAdapter_IMG_favorite;
         private ViewPager mViewPager;
         private ViewPagerAdapter mViewPagerAdapter;
 
@@ -118,12 +119,16 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 }
             });
 
+            /*
             apAdapter_IMG_favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     recyclerviewClickedListener.isFavoriteClicked(apartments.get(getAdapterPosition()), getAdapterPosition());
+
                 }
             });
+
+             */
 
         }
 
@@ -133,7 +138,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             apAdapter_TXT_roomsNum = itemView.findViewById(R.id.numOfRooms_TXT);
             apAdapter_TXT_floorNum = itemView.findViewById(R.id.floorNum_TXT);
             apAdapter_TXT_squareMetreNum = itemView.findViewById(R.id.squareMetreNum_TXT);
-            apAdapter_IMG_favorite = itemView.findViewById(R.id.favorite_IMG);
+         //   apAdapter_IMG_favorite = itemView.findViewById(R.id.favorite_IMG);
             // Initializing the ViewPager Object
             mViewPager = itemView.findViewById(R.id.detailsImage_VP);
 

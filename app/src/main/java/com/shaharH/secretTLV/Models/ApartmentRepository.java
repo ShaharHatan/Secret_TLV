@@ -1,13 +1,95 @@
-package com.shaharH.secretTLV.Utils;
+package com.shaharH.secretTLV.Models;
 
-import com.shaharH.secretTLV.Models.Apartment;
-import com.shaharH.secretTLV.Models.Landlord;
+import android.util.Log;
+
+import com.shaharH.secretTLV.Utils.FireBaseConnector;
+
 import java.util.ArrayList;
 
+public class ApartmentRepository {
+    private static ApartmentRepository apartmentRepository;
+    private ArrayList<Apartment> apartments;
 
-public class ApartmentManager {
+    private ApartmentRepository() {
+ //       apartments = new ArrayList<>();
+        FireBaseConnector.getInstance().getAllApartments(new FireBaseConnector.Callback_apartmentsList() {
+            @Override
+            public void dataReady(ArrayList<Apartment> list) {
+                apartments = list;
+            }
+        });
 
-   public static ArrayList<Apartment> generateApartment(){
+        /*apartments.clear();
+        FireBaseConnector.getInstance().getAllApartments(list -> {
+            for (Apartment item : list) {
+                if (!list.contains(item))
+                    list.add(item);
+            }
+        });
+
+         */
+    }
+
+    public static ApartmentRepository getInstance() {
+        if (apartmentRepository == null)
+            apartmentRepository = new ApartmentRepository();
+        return apartmentRepository;
+    }
+
+    public static void init() {
+        if (apartmentRepository == null)
+            apartmentRepository = new ApartmentRepository();
+    }
+
+    public ArrayList<Apartment> getApartments() {
+        return apartments;
+    }
+
+    public interface CallbackNotifyChange {
+        void notifyDataChange();
+    }
+
+
+    public void setSynchronousDB(CallbackNotifyChange callbackNotifyChange) {
+        FireBaseConnector.getInstance().setCallbackChildEvent(new FireBaseConnector.Callback_child_event() {
+            @Override
+            public void apartmentAdd(Apartment newApartment) {
+
+                if (!apartments.contains(newApartment)) {
+                    apartments.add(newApartment);
+                    callbackNotifyChange.notifyDataChange();
+
+                }
+
+                Log.i("ApartmentRepository", "apartment " + newApartment.getUid() + " was added");
+            }
+
+            @Override
+            public void apartmentChange(Apartment newApartment, int uid) {
+                int position = getIndexFromUid(uid);
+                apartments.set(position, newApartment);
+                callbackNotifyChange.notifyDataChange();
+            }
+        });
+    }
+
+
+    public int getIndexFromUid(int uid) {
+        int i;
+        for (i = 0; i < apartments.size(); i++) {
+            if (apartments.get(i).getUid() != uid)
+                continue;
+            break;
+        }
+        return i;
+    }
+
+
+
+
+
+/*
+   public static ArrayList<Apartment> generateFromHardcode(){
       ArrayList<Apartment> apartments = new ArrayList<>();
 
       ArrayList<String> pic1 = new ArrayList<>();
@@ -549,7 +631,14 @@ public class ApartmentManager {
       );
 
 
+      for (Apartment a:apartments){
+         FireBaseConnector.getInstance().addApartment(a);
+      }
+
       return apartments;
    };
+
+ */
+
 
 }

@@ -4,35 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AddApartment">
+    tools:context=".Activities.AddApartment"
+    android:background="@color/blue_grey_50">
 
     <RatingBar
         android:id="@+id/myRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:layout_centerHorizontal="true"
-        android:progressDrawable="@drawable/custom_ratingbar"
-        android:numStars="5"
-        android:rating="0"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="15dp"
         android:isIndicator="true"
-        android:layout_margin="15dp" />
+        android:numStars="5"
+        android:progressDrawable="@drawable/custom_ratingbar"
+        android:rating="0" />
 
-
-    <FrameLayout
-        android:id="@+id/theFrame"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="400dp"
-        android:layout_height="430dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@+id/myRatingBar" />
+        android:layout_height="450dp"
+        android:layout_below="@+id/myRatingBar"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="40dp"
+        app:cardBackgroundColor="@color/grey_200">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="40dp">
+
+        <FrameLayout
+            android:id="@+id/theFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/continue_BTN"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:layout_below="@id/theFrame"
-        android:textSize="20sp"
-        android:text="Continue"/>
+        android:layout_below="@id/cardView"
+        android:layout_margin="12dp"
+        android:layout_alignStart="@id/cardView"
+        android:layout_alignEnd="@id/cardView"
+        android:text="Continue"
+        android:textSize="20sp" />
 
 </RelativeLayout>

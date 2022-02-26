@@ -18,11 +18,9 @@ import com.shaharH.secretTLV.Fragments.FragmentPart3;
 import com.shaharH.secretTLV.Fragments.FragmentPart4;
 import com.shaharH.secretTLV.Models.Apartment;
 import com.shaharH.secretTLV.Models.Landlord;
-import com.shaharH.secretTLV.Models.myDB;
+import com.shaharH.secretTLV.Utils.FireBaseConnector;
 import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Utils.ImagesManager;
-
-import java.util.ArrayList;
 
 
 public class AddApartment extends AppCompatActivity {
@@ -73,10 +71,12 @@ public class AddApartment extends AppCompatActivity {
                             continue_BTN.setText("Finish");
                         //replace the fragment to the next one
                         loadNextFragment(position);
-                    } else
+                    } else {
                         //The user has provided all the information
                         //and now we will create an apartment
                         createNewApartment();
+                        finish();
+                    }
                 }
             }
         });
@@ -106,7 +106,7 @@ public class AddApartment extends AppCompatActivity {
                 .setStorage_OP(f2.isStorage())
                 .setSquare_meter_OP(f1.getSqm());
 
-        myDB.getInstance().addApartment(apartment);
+        FireBaseConnector.getInstance().addApartment(apartment);
     }
 
     private void loadNextFragment(int position) {
