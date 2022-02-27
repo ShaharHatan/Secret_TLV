@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void findViews() {
-        BTN_Sort = findViewById(R.id.BTN_Sort);
+        BTN_Sort = findViewById(R.id.sort_BTN);
         BTN_Filter = findViewById(R.id.BTN_Filter);
         BTN_Map = findViewById(R.id.BTN_Map);
         landlord_BTN = findViewById(R.id.landlord_BTN);

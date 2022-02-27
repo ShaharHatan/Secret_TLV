@@ -10,7 +10,6 @@ public class Apartment implements Comparable<Apartment> {
 
 
 
-
     public enum APARTMENT_KIND {
         BUILDING, PENTHOUSE, MINI_PENTHOUSE, GARDEN_APARTMENT, DUPLEX, STUDIO_APARTMENT, PRIVATE_HOUSE, BASEMENT_APARTMENT, VACATION_APARTMENT;
     }
@@ -60,15 +59,30 @@ public class Apartment implements Comparable<Apartment> {
         counterUid = counter;
     }
 
+
     @Override
-    public int compareTo(Apartment other) {
-        if (uid < other.getUid())
+    public int compareTo(Apartment o) {
+        if (price_MH < o.getPrice_MH())
             return -1;
-        else if (uid > other.getUid())
+        else if (price_MH > o.getPrice_MH())
             return 1;
         else
             return 0;
     }
+/*
+    //compare by price
+    @Override
+    public int compare(Apartment a1, Apartment a2) {
+        if (a1.price_MH < a2.getPrice_MH())
+            return -1;
+        else if (a1.price_MH > a2.getPrice_MH())
+            return 1;
+        else
+            return 0;
+    }
+
+ */
+
 
 
 
@@ -82,9 +96,6 @@ public class Apartment implements Comparable<Apartment> {
         //return true if uid == other.uid
         return uid==a.getUid();
     }
-
-
-
 
 
 

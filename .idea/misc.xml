@@ -13,7 +13,7 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartments.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_apartments_list.xml" value="0.159375" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_authentication.xml" value="0.16354166666666667" />
-        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_main.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/activity_upload_image.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/contact_popup_window.xml" value="0.16666666666666666" />
@@ -27,6 +27,7 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part4.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/image_view_pager.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/list_apartment_item_rv.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/menu/sort_menu.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/xml/border_shadow.xml" value="0.1" />

@@ -2,13 +2,22 @@ package com.shaharH.secretTLV.Models;
 
 import android.util.Log;
 
+import com.shaharH.secretTLV.Callback.CallbackChildEvent;
+import com.shaharH.secretTLV.Callback.CallbackNotifyDataChange;
+import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Utils.FireBaseConnector;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ApartmentRepository {
     private static ApartmentRepository apartmentRepository;
+    private CallbackNotifyDataChange callbackNotifyDataChange;
+
     private ArrayList<Apartment> apartments;
+    public ArrayList<Apartment> filterList;
+
+
 
     private ApartmentRepository() {
  //       apartments = new ArrayList<>();
@@ -19,15 +28,7 @@ public class ApartmentRepository {
             }
         });
 
-        /*apartments.clear();
-        FireBaseConnector.getInstance().getAllApartments(list -> {
-            for (Apartment item : list) {
-                if (!list.contains(item))
-                    list.add(item);
-            }
-        });
-
-         */
+        FireBaseConnector.getInstance().setCallbackChildEvent(callbackChildEvent);
     }
 
     public static ApartmentRepository getInstance() {
@@ -45,34 +46,18 @@ public class ApartmentRepository {
         return apartments;
     }
 
-    public interface CallbackNotifyChange {
-        void notifyDataChange();
-    }
-
-
-    public void setSynchronousDB(CallbackNotifyChange callbackNotifyChange) {
-        FireBaseConnector.getInstance().setCallbackChildEvent(new FireBaseConnector.Callback_child_event() {
+    public void getOriginalList(){
+        FireBaseConnector.getInstance().getAllApartments(new FireBaseConnector.Callback_apartmentsList() {
             @Override
-            public void apartmentAdd(Apartment newApartment) {
-
-                if (!apartments.contains(newApartment)) {
-                    apartments.add(newApartment);
-                    callbackNotifyChange.notifyDataChange();
-
-                }
-
-                Log.i("ApartmentRepository", "apartment " + newApartment.getUid() + " was added");
-            }
-
-            @Override
-            public void apartmentChange(Apartment newApartment, int uid) {
-                int position = getIndexFromUid(uid);
-                apartments.set(position, newApartment);
-                callbackNotifyChange.notifyDataChange();
+            public void dataReady(ArrayList<Apartment> list) {
+                apartments = list;
             }
         });
     }
 
+    public void setCallbackNotifyDataChange(CallbackNotifyDataChange callbackNotifyDataChange){
+        this.callbackNotifyDataChange = callbackNotifyDataChange;
+    }
 
     public int getIndexFromUid(int uid) {
         int i;
@@ -84,8 +69,39 @@ public class ApartmentRepository {
         return i;
     }
 
+    CallbackChildEvent callbackChildEvent = new CallbackChildEvent() {
+        @Override
+        public void apartmentAdd(Apartment newApartment) {
+            if (apartments != null) {
+                if (!apartments.contains(newApartment)) {
+                    apartments.add(newApartment);
+                    callbackNotifyDataChange.notifyDataChange();
+                }
+                Log.i("ApartmentRepository", "apartment " + newApartment.getUid() + " was added");
+            }
+        }
+
+        @Override
+        public void apartmentChange(Apartment newApartment) {
+            if (apartments != null) {
+                int position = getIndexFromUid(newApartment.getUid());
+                apartments.set(position, newApartment);
+                callbackNotifyDataChange.notifyDataChange();
+            }
+        }
+    };
+
+    //sort high to low
+    public void sortHTL(){
+        Collections.sort(apartments);
+        Collections.reverse(apartments);
+    }
 
 
+    //sort low to high
+    public void sortLTH(){
+        Collections.sort(apartments);
+    }
 
 
 /*

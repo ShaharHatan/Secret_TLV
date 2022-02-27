@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/lowToHigh"
+            android:icon="@drawable/low_to_high"
+            android:title="Price: low to high" />
+        <item android:id="@+id/highToLow"
+            android:icon="@drawable/high_to_low"
+            android:title="Price: high to low" />
+</menu>

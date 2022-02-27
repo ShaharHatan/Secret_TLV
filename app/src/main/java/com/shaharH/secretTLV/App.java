@@ -12,10 +12,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        //TODO: Change to init();
-        FireBaseConnector.getInstance();
+        FireBaseConnector.init();
         //initial id counter on Apartment class
-        FireBaseConnector.getCounterUid(new FireBaseConnector.Callback_int() {
+        FireBaseConnector.getInstance().getCounterUid(new FireBaseConnector.Callback_int() {
             @Override
             public void dataReady(int i) {
                 Apartment.initialCounterId(i);

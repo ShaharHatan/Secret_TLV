@@ -26,11 +26,14 @@
                         android:startY="0"
                         android:type="linear">
                         <item
-                            android:color="#6F002D"
+                            android:color="#FF965E"
                             android:offset="0.0" />
 
                         <item
-                            android:color="#880e4f"
+                            android:color="#F3B4E9"
+                            android:offset="0.4" />
+                        <item
+                            android:color="#A1E2FF"
                             android:offset="1.0" />
                     </gradient>
                 </aapt:attr>
