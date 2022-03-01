@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AddApartment"
-    android:background="@color/blue_grey_50">
+    tools:context=".Activities.AddApartment" >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/rotshild"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"/>
 
     <RatingBar
         android:id="@+id/myRatingBar"
@@ -17,16 +28,18 @@
         android:isIndicator="true"
         android:numStars="5"
         android:progressDrawable="@drawable/custom_ratingbar"
-        android:rating="0" />
+        android:rating="0"
+        android:progressBackgroundTint="@color/bordeaux_1100"
+        android:progressTint="@color/bordeaux_1100"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="400dp"
-        android:layout_height="450dp"
+        android:layout_width="430dp"
+        android:layout_height="470dp"
         android:layout_below="@+id/myRatingBar"
         app:cardCornerRadius="20dp"
-        android:layout_marginHorizontal="40dp"
-        app:cardBackgroundColor="@color/grey_200">
+        android:layout_marginHorizontal="20dp"
+        app:cardBackgroundColor="@color/bordeaux_1300_transparency">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -42,15 +55,15 @@
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_BTN"
+        style="@style/MyButton"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/cardView"
-        android:layout_margin="12dp"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@id/cardView"
         android:layout_alignEnd="@id/cardView"
-        android:text="Continue"
-        android:textSize="20sp" />
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="Continue" />
 
 </RelativeLayout>

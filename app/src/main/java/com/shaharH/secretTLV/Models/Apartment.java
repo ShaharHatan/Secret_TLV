@@ -69,20 +69,6 @@ public class Apartment implements Comparable<Apartment> {
         else
             return 0;
     }
-/*
-    //compare by price
-    @Override
-    public int compare(Apartment a1, Apartment a2) {
-        if (a1.price_MH < a2.getPrice_MH())
-            return -1;
-        else if (a1.price_MH > a2.getPrice_MH())
-            return 1;
-        else
-            return 0;
-    }
-
- */
-
 
 
 

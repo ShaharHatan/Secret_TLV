@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:endIconMode="clear_text"
+        app:hintTextColor="@color/bordeaux_1200"
         android:hint="Number of rooms">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -59,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:endIconMode="clear_text"
+        app:hintTextColor="@color/bordeaux_1200"
         android:hint="Square metre">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -75,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:endIconMode="clear_text"
+        app:hintTextColor="@color/bordeaux_1200"
         android:hint="Price per month">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

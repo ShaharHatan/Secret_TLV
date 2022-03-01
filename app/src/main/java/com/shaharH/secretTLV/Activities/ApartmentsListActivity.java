@@ -1,36 +1,39 @@
 package com.shaharH.secretTLV.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.MenuPopupWindow;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.gson.Gson;
 import com.shaharH.secretTLV.Adapters.RecyclerviewAdapter;
 import com.shaharH.secretTLV.Callback.CallbackNotifyDataChange;
 import com.shaharH.secretTLV.Models.Apartment;
 import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Models.ApartmentRepository;
-import com.shaharH.secretTLV.Utils.FireBaseConnector;
+import com.shaharH.secretTLV.Utils.FilterActivity;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class ApartmentsListActivity extends AppCompatActivity {
     private RecyclerView main_RV_apartments;
-    private RecyclerviewAdapter recyclerviewAdapter;
+    private RecyclerviewAdapter recyclerviewAdapter, recyclerviewAdapterFilter;
 
     private MaterialButton sort_BTN;
+//    private MaterialButton filter_BTN;
+//    private MaterialButton map_BTN;
+
+    private FilterActivity filterActivity;
+    private ArrayList<Apartment> filterList;
+
 
 
     @Override
@@ -38,15 +41,53 @@ public class ApartmentsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apartments_list);
 
+
         findViews();
-        initMenuBar();
-        initRV();
-
-
-
+        recyclerviewAdapter = new RecyclerviewAdapter(this, ApartmentRepository.getInstance().getApartments());
+        initRVA(recyclerviewAdapter);
+        initButtons();
     }
 
-    private void initMenuBar() {
+
+    private void initButtons() {
+        initSort();
+//        initFilter();
+    }
+
+/*
+    private void initFilter() {
+        filterActivity = new FilterActivity();
+        filter_BTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ApartmentsListActivity.this, FilterActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                setNewAdapter(filterActivity.getFilterList());
+                //Log.i("ApartmentsListActivity", "back from intent");
+               //setNewAdapter(filterActivity.getFilterList());
+            }
+        });
+        filterActivity.setCallbackFilterListReady(new FilterActivity.CallbackFilterListReady() {
+            @Override
+            public void setFilterList(ArrayList<Apartment> filterList) {
+                setNewAdapter(filterList);
+            }
+        });
+    }
+
+
+    private void setNewAdapter(ArrayList<Apartment> filterList) {
+        if (!(filterList==null)) {
+            recyclerviewAdapterFilter = new RecyclerviewAdapter(this,filterList);
+            initRVA(recyclerviewAdapterFilter);
+        }
+    }
+
+ */
+
+    private void initSort() {
         sort_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,17 +101,16 @@ public class ApartmentsListActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.lowToHigh:
-                               ApartmentRepository.getInstance().sortLTH();
+                                ApartmentRepository.getInstance().sortLTH();
                                 main_RV_apartments.getAdapter().notifyDataSetChanged();
                                 break;
                             case R.id.highToLow:
-                               ApartmentRepository.getInstance().sortHTL();
+                                ApartmentRepository.getInstance().sortHTL();
                                 main_RV_apartments.getAdapter().notifyDataSetChanged();
                                 break;
                         }
-                                return false;
-                        }
-
+                        return false;
+                    }
                 });
                 // Showing the popup menu
                 popupMenuSort.show();
@@ -78,8 +118,7 @@ public class ApartmentsListActivity extends AppCompatActivity {
         });
     }
 
-    private void initRV() {
-        recyclerviewAdapter = new RecyclerviewAdapter(this, ApartmentRepository.getInstance().getApartments());
+    private void initRVA(RecyclerviewAdapter recyclerviewAdapter) {
         recyclerviewAdapter.setRecyclerviewClickedListener(new RecyclerviewAdapter.RecyclerviewClickedListener() {
             /*
             @Override
@@ -98,7 +137,7 @@ public class ApartmentsListActivity extends AppCompatActivity {
                 bundle.putInt("pos", position);
                 intent.putExtra("currentApartmentPos", bundle);
                 startActivity(intent);
-       //         main_RV_apartments.getAdapter().notifyItemChanged(position);
+                    //     main_RV_apartments.getAdapter().notifyItemChanged(position);
             }
         });
 
@@ -115,6 +154,8 @@ public class ApartmentsListActivity extends AppCompatActivity {
     private void findViews() {
         main_RV_apartments = findViewById(R.id.main_RV_apartments);
         sort_BTN = findViewById(R.id.sort_BTN);
+ //       filter_BTN = findViewById(R.id.filter_BTN);
+ //       map_BTN =  findViewById(R.id.map_BTN);
     }
 
 
@@ -124,7 +165,6 @@ public class ApartmentsListActivity extends AppCompatActivity {
         ApartmentRepository.getInstance().getOriginalList();
         finish();
     }
-
 
 
     CallbackNotifyDataChange callbackNotifyDataChange = new CallbackNotifyDataChange() {

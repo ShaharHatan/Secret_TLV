@@ -6,80 +6,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activities.HomeActivity"
-    android:background="@color/blue_grey_300">
+    android:background="@color/white_dark1">
 
-    <LinearLayout
-        android:id="@+id/filter_LL"
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:src="@drawable/rotshild"
+        android:scaleType="centerCrop" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/sort_BTN"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            app:icon="@drawable/button_sort"
-            app:iconSize="30dp"
-            app:cornerRadius="0dp"
-            android:textSize="15sp"
-            android:text="Sort" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/BTN_Filter"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            app:icon="@drawable/button_filter"
-            app:iconSize="33dp"
-            app:cornerRadius="0dp"
-            android:textSize="15sp"
-            android:text="Filter" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/BTN_Map"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            app:icon="@drawable/button_map"
-            app:iconSize="30dp"
-            app:cornerRadius="0dp"
-            android:textSize="15sp"
-            android:text="Map" />
-    </LinearLayout>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/filter_LL"
-        android:layout_margin="40dp"
-        android:scaleType="centerCrop"
-        app:lottie_loop="false"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/lotti_apartment" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/renter_BTN"
-        android:layout_width="250dp"
+        style="@style/MyButton"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/animation_view"
         android:layout_centerHorizontal="true"
-        android:text="Looking for your new apartment?"
-        android:textSize="17sp"
-        app:strokeColor="@color/white"
-        app:strokeWidth="1.5dp" />
+        android:layout_above="@+id/landlord_BTN"
+        android:layout_marginTop="50dp"
+        app:icon="@drawable/for_rent"
+        app:iconSize="50dp"
+        app:iconTint="@color/grey_300"
+        android:text="Looking for apartment?" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/landlord_BTN"
-        android:layout_width="250dp"
+        style="@style/MyButton"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/renter_BTN"
-        app:strokeColor="@color/white"
-        android:textSize="17sp"
-        app:strokeWidth="1.5dp"
+        android:layout_marginVertical="30dp"
+        app:icon="@drawable/home"
+        app:iconSize="60dp"
+        app:iconTint="@color/grey_300"
         android:text="Adding an apartment for rent" />
 
 </RelativeLayout>

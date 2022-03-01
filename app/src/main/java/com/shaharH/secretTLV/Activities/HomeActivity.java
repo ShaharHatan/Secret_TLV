@@ -31,6 +31,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ApartmentsListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putBoolean("isFilter", false);
                 startActivity(intent);
             }
         });
@@ -47,8 +49,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private void findViews() {
         BTN_Sort = findViewById(R.id.sort_BTN);
-        BTN_Filter = findViewById(R.id.BTN_Filter);
-        BTN_Map = findViewById(R.id.BTN_Map);
+        BTN_Filter = findViewById(R.id.filter_BTN);
+        BTN_Map = findViewById(R.id.map_BTN);
         landlord_BTN = findViewById(R.id.landlord_BTN);
         renter_BTN = findViewById(R.id.renter_BTN);
     }

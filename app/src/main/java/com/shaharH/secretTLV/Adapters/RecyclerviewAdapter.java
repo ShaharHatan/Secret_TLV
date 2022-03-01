@@ -105,9 +105,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         //in the constructor we connect between the views and the items
         public ApartmentViewHolder(@NonNull View itemView) {
             super(itemView);
-
             findItemViews();
             initViews();
+
+
         }
 
         private void initViews() {

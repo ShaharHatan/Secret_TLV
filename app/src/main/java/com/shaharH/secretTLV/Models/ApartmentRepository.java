@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.shaharH.secretTLV.Callback.CallbackChildEvent;
 import com.shaharH.secretTLV.Callback.CallbackNotifyDataChange;
-import com.shaharH.secretTLV.R;
 import com.shaharH.secretTLV.Utils.FireBaseConnector;
 
 import java.util.ArrayList;
@@ -13,18 +12,17 @@ import java.util.Collections;
 public class ApartmentRepository {
     private static ApartmentRepository apartmentRepository;
     private CallbackNotifyDataChange callbackNotifyDataChange;
-
     private ArrayList<Apartment> apartments;
-    public ArrayList<Apartment> filterList;
+
 
 
 
     private ApartmentRepository() {
- //       apartments = new ArrayList<>();
         FireBaseConnector.getInstance().getAllApartments(new FireBaseConnector.Callback_apartmentsList() {
             @Override
             public void dataReady(ArrayList<Apartment> list) {
                 apartments = list;
+
             }
         });
 
@@ -102,6 +100,15 @@ public class ApartmentRepository {
     public void sortLTH(){
         Collections.sort(apartments);
     }
+
+
+
+}
+
+
+
+
+
 
 
 /*
@@ -657,4 +664,3 @@ public class ApartmentRepository {
  */
 
 
-}

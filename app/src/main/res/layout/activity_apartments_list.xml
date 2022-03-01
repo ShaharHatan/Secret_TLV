@@ -19,28 +19,37 @@
             android:layout_height="match_parent"
             app:icon="@drawable/button_sort"
             app:iconSize="30dp"
+            app:backgroundTint="@color/bordeaux_1100"
+            android:textColor="@color/grey_300"
+            app:iconTint="@color/grey_300"
             app:cornerRadius="0dp"
             android:textSize="15sp"
             android:text="Sort" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/BTN_Filter"
+            android:id="@+id/filter_BTN"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             app:icon="@drawable/button_filter"
             app:iconSize="33dp"
+            app:backgroundTint="@color/bordeaux_1100"
+            android:textColor="@color/grey_300"
+            app:iconTint="@color/grey_300"
             app:cornerRadius="0dp"
             android:textSize="15sp"
             android:text="Filter" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/BTN_Map"
+            android:id="@+id/map_BTN"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
             app:icon="@drawable/button_map"
             app:iconSize="30dp"
+            app:backgroundTint="@color/bordeaux_1100"
+            android:textColor="@color/grey_300"
+            app:iconTint="@color/grey_300"
             app:cornerRadius="0dp"
             android:textSize="15sp"
             android:text="Map" />
@@ -51,18 +60,7 @@
         android:id="@+id/main_RV_apartments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/filter_LL"/>
+        android:layout_below="@+id/filter_LL" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/FAB_add_apartment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="8dp"
-        android:src="@drawable/button_filter"
-        app:elevation="8dp" />
 
 </RelativeLayout>

@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/bordeaux_1050"
         app:cardCornerRadius="30dp"
         app:contentPadding="5dp">
 
@@ -20,16 +20,20 @@
         android:layout_height="match_parent">
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/closePopUp_BTN"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/purple_500"
-        app:icon="@drawable/close"
-        app:iconSize="12dp"
-        app:iconGravity="top"
-        app:iconTint="@color/white" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/closePopUp_BTN"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/grey_300"
+            app:icon="@drawable/close"
+            app:iconGravity="top"
+            app:iconSize="12dp"
+            app:iconTint="@color/white" />
 
     <TextView
         android:id="@+id/landlordName_TXT"

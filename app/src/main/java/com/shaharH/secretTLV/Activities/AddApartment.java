@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.shaharH.secretTLV.Callback.FilledInFragment;
@@ -26,7 +27,7 @@ import com.shaharH.secretTLV.Utils.ImagesManager;
 public class AddApartment extends AppCompatActivity {
     public static final int NUM_OF_VIEWS = 5;
     private RatingBar myRatingBar;
-    private Button continue_BTN;
+    private MaterialButton continue_BTN;
     private FilledInFragment[] fragments = new FilledInFragment[NUM_OF_VIEWS];
 
     @Override

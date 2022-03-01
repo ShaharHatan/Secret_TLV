@@ -2,7 +2,14 @@
 <resources>
 
     <!-- my favorite palette -->
-    #6F002D
+
+    <color name="pink_light_200">#FEDBD0</color>
+    <color name="brown_dark_700">#442C2E</color>
+    <color name="white_300">#FFFBFA</color>
+
+    <color name="cream_dark_3">#CEBDA8</color>
+    <color name="green_pastel_1">#C7CFC1</color>
+    <color name="green_dark_1">#485141</color>
 
 
     <color name="white_dark1">#E9E7E8</color>
@@ -10,7 +17,7 @@
     <color name="gray">#C5C3C4</color>
     <color name="light_1">#FEE5E1</color>
     <color name="cream_1">#CDBAAA</color>
-    <color name="cream_dark_1">#F5E0CC</color>
+    <color name="cream_dark_1">#D5F5E0CC</color>
     <color name="cream_2">#B2A69F</color>
     <color name="cream_3">#DFD4C5</color>
     <color name="cream_light_1">#EDEAE6</color>
@@ -39,7 +46,14 @@
     <color name="bordeaux_800">#A82058</color>
     <color name="bordeaux_900">#6F002D</color>
     <color name="bordeaux_1000">#59001F</color>
-
+    <color name="bordeaux_1100">#5C1349</color>
+    <color name="bordeaux_1200">#350724</color>
+    <color name="bordeaux_1100_transparency">#725C1349</color>
+    <color name="bordeaux_1200_transparency">#A9701C59</color>
+    <color name="bordeaux_1300_transparency">#D84C143D</color>
+    <color name="bordeaux_1400_transparency">#465E1C4C</color>
+    <color name="bordeaux_1050">#6E4162</color>
+    <color name="bordeaux_950">#715369</color>
 
 
     <!-- app color palette -->
@@ -99,6 +113,7 @@
 
     <color name="pink_50">#fce4ec</color>
     <color name="pink_100">#f8bbd0</color>
+    <color name="pink_70">#EECCE1</color>
     <color name="pink_200">#f48fb1</color>
     <color name="pink_300">#f06292</color>
     <color name="pink_400">#ec407a</color>
@@ -285,6 +300,8 @@
     <color name="amber_500">#ffc107</color>
     <color name="amber_600">#ffb300</color>
     <color name="amber_700">#ffa000</color>
+    <color name="amber_650">#BE7D23</color>
+
     <color name="amber_800">#ff8f00</color>
     <color name="amber_900">#ff6f00</color>
     <color name="amber_A100">#ffe57f</color>
