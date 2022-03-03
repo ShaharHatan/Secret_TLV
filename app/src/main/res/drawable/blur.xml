@@ -16,8 +16,24 @@
 
             <path
                 android:fillType="evenOdd"
-                android:fillColor="@color/white"
                 android:pathData="M0,0h512v512h-512z">
+
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:endX="300"
+                        android:endY="250"
+                        android:startX="0"
+                        android:startY="0"
+                        android:type="linear">
+                        <item
+                            android:color="#4BFFFFFF"
+                            android:offset="0.0" />
+
+                        <item
+                            android:color="#4BFFFFFF"
+                            android:offset="1" />
+                    </gradient>
+                </aapt:attr>
             </path>
         </group>
     </group>

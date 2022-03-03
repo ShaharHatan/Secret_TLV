@@ -69,7 +69,7 @@ public class AddApartment extends AppCompatActivity {
                     myRatingBar.setRating(++position);
                     //The user has more information to provide
                     if (position <= NUM_OF_VIEWS-1) {
-                            continue_BTN.setText("Finish");
+                        continue_BTN.setText("Finish");
                         //replace the fragment to the next one
                         loadNextFragment(position);
                     } else {
@@ -139,6 +139,6 @@ public class AddApartment extends AppCompatActivity {
 
     private String getUser(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            return user.getUid();
+        return user.getUid();
     }
 }

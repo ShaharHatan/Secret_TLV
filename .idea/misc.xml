@@ -6,6 +6,7 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable-v24/heart_empty.xml" value="0.118" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable-v24/heart_filled.xml" value="0.118" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable/blur.xml" value="0.1595" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable/custom_ratingbar.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/font/button_font.xml" value="0.17314814814814813" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/dropdown_item_neighborhood.xml" value="0.22" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_add1.xml" value="0.22" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_add1_list.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_lotti.xml" value="0.14221014492753623" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part0.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part1.xml" value="0.16354166666666667" />
         <entry key="..\:/Users/shaha/AndroidStudioProjects/Secret_TLV/app/src/main/res/layout/fragment_part2.xml" value="0.16354166666666667" />

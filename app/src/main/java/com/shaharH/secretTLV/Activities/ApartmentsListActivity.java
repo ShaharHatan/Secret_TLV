@@ -137,7 +137,7 @@ public class ApartmentsListActivity extends AppCompatActivity {
                 bundle.putInt("pos", position);
                 intent.putExtra("currentApartmentPos", bundle);
                 startActivity(intent);
-                    //     main_RV_apartments.getAdapter().notifyItemChanged(position);
+                //     main_RV_apartments.getAdapter().notifyItemChanged(position);
             }
         });
 
@@ -154,8 +154,8 @@ public class ApartmentsListActivity extends AppCompatActivity {
     private void findViews() {
         main_RV_apartments = findViewById(R.id.main_RV_apartments);
         sort_BTN = findViewById(R.id.sort_BTN);
- //       filter_BTN = findViewById(R.id.filter_BTN);
- //       map_BTN =  findViewById(R.id.map_BTN);
+        //       filter_BTN = findViewById(R.id.filter_BTN);
+        //       map_BTN =  findViewById(R.id.map_BTN);
     }
 
 
