@@ -18,7 +18,9 @@
         android:id="@+id/errorMessage_TXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp" />
+        android:layout_margin="12dp"
+        android:textColor="@color/red_900"
+        android:textStyle="bold" />
 
 
     <TextView

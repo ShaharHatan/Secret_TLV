@@ -147,7 +147,7 @@ public class FragmentPart0 extends Fragment implements FilledInFragment {
     }
 
     private boolean checkOnlyAlphabet(String str) {
-        if (!str.matches("[a-zA-Z]+"))
+        if (!str.matches("[a-zA-Z ]+"))
             return false;
         return true;
     }
